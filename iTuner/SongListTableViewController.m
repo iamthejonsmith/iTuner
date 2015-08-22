@@ -62,14 +62,11 @@
     NSString *album = listingDict[@"collectionName"];
     NSString *song = listingDict[@"trackName"];
     NSString *albumURL = listingDict[@"artworkUrl30"];
-//    NSString *albumLrgURL = listingDict[@"artworkUrl60"];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", artist, album];
     cell.detailTextLabel.text = song;
     UIImage *albumArt = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: albumURL]]];
     cell.imageView.image = albumArt;
-    
-//    _albumLgArt = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: albumLrgURL]]];
     
     return cell;
 }
