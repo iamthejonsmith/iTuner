@@ -8,14 +8,13 @@
 
 #import "SongListTableViewController.h"
 #import "MusicDetailviewController.h"
-#import "MBProgressHUD.h"
 
-@interface SongListTableViewController ()
+@interface SongListTableViewController ()<UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *musicTableView;
 @property (strong, nonatomic) NSMutableArray *songArray;
-@property (strong, nonatomic) MBProgressHUD *hud;
 @property (strong, nonatomic) NSURLSession *session;
+@property (strong, nonatomic) UIImage *albumLgArt;
 
 @end
 
@@ -24,10 +23,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = _passedTypeString;
-    [self musicRequest];
     _songArray = [NSMutableArray array];
     
+    self.navigationItem.title = @"iTuner Song List";
+    [self musicRequest];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,7 +45,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-   return [_songArray count];
+
+        return [_songArray count];
 }
 
 
@@ -58,9 +58,15 @@
     NSString *artist = listingDict[@"artistName"];
     NSString *album = listingDict[@"collectionName"];
     NSString *song = listingDict[@"trackName"];
+    NSString *albumURL = listingDict[@"artworkUrl30"];
+    NSString *albumLrgURL = listingDict[@"artworkUrl60"];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", artist, album];
     cell.detailTextLabel.text = song;
+    UIImage *albumArt = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: albumURL]]];
+    cell.imageView.image = albumArt;
+    
+    _albumLgArt = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: albumLrgURL]]];
     
     return cell;
 }
@@ -73,7 +79,15 @@
     _session = [NSURLSession sessionWithConfiguration:config
                                              delegate:nil
                                         delegateQueue:nil];
-    [self loadingOverlay];
+    
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    indicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+    indicator.center = self.view.center;
+    [self.view addSubview:indicator];
+    [indicator bringSubviewToFront:self.view];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = TRUE;
+    
+    [indicator startAnimating];
     
     NSString *queryString = [_passedTitleString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     NSString *urlString = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@", queryString];
@@ -97,7 +111,7 @@
                                       }
                                       dispatch_async(dispatch_get_main_queue(), ^{
                                           [self.tableView reloadData];
-                                          [_hud hide:YES];
+                                          [indicator stopAnimating];
                                       });
                                   };
                               }];
@@ -106,13 +120,6 @@
 
 #pragma mark - Loading Overlay methods
 
-// loading progress overlay method
-- (void)loadingOverlay
-{
-    _hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    _hud.labelText = @"Loading Music List";
-    [_hud show: YES];
-}
 
 #pragma mark - Navigation
 
@@ -129,10 +136,10 @@
         
         mdvc.passedArtist = musicDict[@"artistName"];
         mdvc.passedSong = musicDict[@"trackName"];
-
+        mdvc.passedImage = _albumLgArt;
+        
     }
     
 }
-
 
 @end

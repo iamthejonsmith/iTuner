@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) NSString *passedArtist;
 @property (strong, nonatomic) NSString *passedSong;
+@property (strong, nonatomic) UIImage *passedImage;
 
 @end

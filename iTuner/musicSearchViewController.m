@@ -44,6 +44,8 @@
     _searchTitleLabel.text = @"Enter Artist Name";
     
     _searchTitleTextField.delegate = self;
+    
+    self.navigationItem.title = @"iTuner Music Search";
 
 }
 

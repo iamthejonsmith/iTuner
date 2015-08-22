@@ -2,12 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kLD-q5-ff4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Song List Table View Controller-->
+        <!--iTuner Song List-->
         <scene sceneID="acG-uu-9v2">
             <objects>
-                <tableViewController id="Buo-By-Hi1" customClass="SongListTableViewController" sceneMemberID="viewController">
+                <tableViewController title="iTuner Song List" id="Buo-By-Hi1" customClass="SongListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6wq-h8-j4Z">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="1311" y="42"/>
         </scene>
-        <!--Music Detail View Controller-->
+        <!--iTuner Song Lyrics-->
         <scene sceneID="KH3-PP-abj">
             <objects>
-                <viewController id="4xa-u8-q3c" customClass="MusicDetailViewController" sceneMemberID="viewController">
+                <viewController title="iTuner Song Lyrics" id="4xa-u8-q3c" customClass="MusicDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zhO-gb-HaP"/>
                         <viewControllerLayoutGuide type="bottom" id="O5M-qt-Pqf"/>
@@ -65,30 +66,61 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ggu-by-GZp">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="140" width="600" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ohs-uc-u5L">
+                                <rect key="frame" x="16" y="72" width="60" height="60"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cn2-7D-mTQ">
+                                <rect key="frame" x="110" y="72" width="398" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bj-u4-VDr">
+                                <rect key="frame" x="84" y="101" width="451" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="19L-rQ-87b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ggu-by-GZp" firstAttribute="top" secondItem="P7I-4g-ezm" secondAttribute="top" id="DeL-Mz-ruN"/>
-                            <constraint firstItem="Ggu-by-GZp" firstAttribute="bottom" secondItem="O5M-qt-Pqf" secondAttribute="top" id="H9z-8Q-VMQ"/>
-                            <constraint firstAttribute="trailing" secondItem="Ggu-by-GZp" secondAttribute="trailing" id="d5n-cf-0Mo"/>
-                            <constraint firstItem="Ggu-by-GZp" firstAttribute="leading" secondItem="P7I-4g-ezm" secondAttribute="leading" id="eKg-8i-oex"/>
+                            <constraint firstItem="Ggu-by-GZp" firstAttribute="leading" secondItem="P7I-4g-ezm" secondAttribute="leading" id="1b6-4U-Dsx"/>
+                            <constraint firstItem="3bj-u4-VDr" firstAttribute="leading" secondItem="Ohs-uc-u5L" secondAttribute="trailing" constant="8" symbolic="YES" id="2Lb-ba-kzg"/>
+                            <constraint firstItem="Ggu-by-GZp" firstAttribute="bottom" secondItem="O5M-qt-Pqf" secondAttribute="top" id="6M1-Bj-yhd"/>
+                            <constraint firstItem="Ohs-uc-u5L" firstAttribute="top" secondItem="zhO-gb-HaP" secondAttribute="bottom" constant="8" symbolic="YES" id="7UL-bB-fsC"/>
+                            <constraint firstAttribute="trailing" secondItem="Ggu-by-GZp" secondAttribute="trailing" id="9iV-4a-CYw"/>
+                            <constraint firstItem="Cn2-7D-mTQ" firstAttribute="centerX" secondItem="Ggu-by-GZp" secondAttribute="centerX" constant="9" id="CRB-V6-OKL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3bj-u4-VDr" secondAttribute="trailing" constant="49" id="D5E-R0-tNj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cn2-7D-mTQ" secondAttribute="trailing" constant="76" id="Gd0-4h-UkI"/>
+                            <constraint firstItem="Cn2-7D-mTQ" firstAttribute="leading" secondItem="Ohs-uc-u5L" secondAttribute="trailing" constant="34" id="JdZ-m4-75h"/>
+                            <constraint firstItem="Ggu-by-GZp" firstAttribute="top" secondItem="3bj-u4-VDr" secondAttribute="bottom" constant="8" symbolic="YES" id="Rnm-xn-mY8"/>
+                            <constraint firstItem="Ohs-uc-u5L" firstAttribute="leading" secondItem="P7I-4g-ezm" secondAttribute="leadingMargin" id="tje-Iv-w29"/>
+                            <constraint firstItem="Cn2-7D-mTQ" firstAttribute="top" secondItem="Ohs-uc-u5L" secondAttribute="top" id="uNU-cq-spB"/>
+                            <constraint firstItem="Ggu-by-GZp" firstAttribute="top" secondItem="Ohs-uc-u5L" secondAttribute="bottom" constant="8" symbolic="YES" id="v8n-uU-pai"/>
+                            <constraint firstItem="3bj-u4-VDr" firstAttribute="top" secondItem="Cn2-7D-mTQ" secondAttribute="bottom" constant="8" symbolic="YES" id="xkK-KZ-uj4"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="albumImage" destination="Ohs-uc-u5L" id="xLz-iw-65I"/>
+                        <outlet property="artistLabel" destination="Cn2-7D-mTQ" id="K6G-N6-Oh8"/>
                         <outlet property="lyricWebView" destination="Ggu-by-GZp" id="ZJy-J8-8VH"/>
+                        <outlet property="songTitleLabel" destination="3bj-u4-VDr" id="Baa-mM-wLB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PiR-ec-aHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2063" y="47"/>
+            <point key="canvasLocation" x="2060" y="42"/>
         </scene>
-        <!--Music Search View Controller-->
+        <!--iTuner Song Search-->
         <scene sceneID="Zwh-IR-GtA">
             <objects>
-                <viewController id="2cM-bA-rMn" customClass="musicSearchViewController" sceneMemberID="viewController">
+                <viewController title="iTuner Song Search" id="2cM-bA-rMn" customClass="musicSearchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mpK-Yw-ipt"/>
                         <viewControllerLayoutGuide type="bottom" id="D7A-VB-nSi"/>

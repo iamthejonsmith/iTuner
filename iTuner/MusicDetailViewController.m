@@ -7,25 +7,29 @@
 //
 
 #import "MusicDetailViewController.h"
-#import "MBProgressHUD.h"
 
 @interface MusicDetailViewController ()<UIWebViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIWebView *lyricWebView;
-@property (strong, nonatomic) MBProgressHUD *hud;
+@property (strong, nonatomic) IBOutlet UIImageView *albumImage;
+@property (strong, nonatomic) IBOutlet UILabel *artistLabel;
+@property (strong, nonatomic) IBOutlet UILabel *songTitleLabel;
 
 @end
 
 @implementation MusicDetailViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     _lyricWebView.delegate = self;
     
-    self.navigationItem.title = _passedSong;
+   self.navigationItem.title = @"iTuner Lyric Page";
+    _albumImage.image = _passedImage;
+    _artistLabel.text = _passedArtist;
+    _songTitleLabel.text = _passedSong;
+    
     [self lyricRequest];
-    [self loadingOverlay];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,29 +37,29 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Loading Overlay methods
-
-// loading progress overlay method
-- (void)loadingOverlay
-{
-    _hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    _hud.labelText = @"Loading Music List";
-    [_hud show: YES];
-    [_hud hide:YES afterDelay:10];
-}
+\
 
 #pragma mark - Webview methods
 
 -(void)lyricRequest
 {
-    [self loadingOverlay];
+    [super viewDidLoad];
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    indicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+    indicator.center = self.view.center;
+    [self.view addSubview:indicator];
+    [indicator bringSubviewToFront:self.view];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = TRUE;
     
+    [indicator startAnimating];
     NSString *artistString = [_passedArtist stringByReplacingOccurrencesOfString:@" " withString:@"_"];
     NSString *songString = [_passedSong stringByReplacingOccurrencesOfString:@" " withString:@"_"];
     NSString *urlString = [NSString stringWithFormat:@"http://lyrics.wikia.com/wiki/%@:%@", artistString, songString];
     NSLog(@"%@", urlString);
     NSURL *myURL = [NSURL URLWithString:urlString];
     [_lyricWebView loadRequest:[NSURLRequest requestWithURL:myURL]];
+    
+    [indicator stopAnimating];
 }
 
 @end
