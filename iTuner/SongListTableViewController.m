@@ -27,6 +27,11 @@
     
     self.navigationItem.title = @"iTuner Song List";
     [self musicRequest];
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = self.view.bounds;
+    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor whiteColor] CGColor], (id)[[UIColor blackColor] CGColor], nil];
+    [self.view.layer insertSublayer:gradient atIndex:0];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -117,9 +122,6 @@
                               }];
     [task resume];
 }
-
-#pragma mark - Loading Overlay methods
-
 
 #pragma mark - Navigation
 

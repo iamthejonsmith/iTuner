@@ -17,6 +17,7 @@
 		9FAFB35F1B87CDBF00C6BA00 /* SongListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFB35E1B87CDBF00C6BA00 /* SongListTableViewController.m */; };
 		9FAFB3631B87D01200C6BA00 /* MusicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFB3621B87D01200C6BA00 /* MusicDetailViewController.m */; };
 		9FAFB36A1B87D9B000C6BA00 /* musicSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFB3691B87D9B000C6BA00 /* musicSearchViewController.m */; };
+		9FAFB36C1B883BE500C6BA00 /* blueGradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FAFB36B1B883BE500C6BA00 /* blueGradient.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		9FAFB3621B87D01200C6BA00 /* MusicDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDetailViewController.m; sourceTree = "<group>"; };
 		9FAFB3681B87D9B000C6BA00 /* musicSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = musicSearchViewController.h; sourceTree = "<group>"; };
 		9FAFB3691B87D9B000C6BA00 /* musicSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = musicSearchViewController.m; sourceTree = "<group>"; };
+		9FAFB36B1B883BE500C6BA00 /* blueGradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueGradient.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		9FAFB3331B87CB9800C6BA00 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9FAFB36B1B883BE500C6BA00 /* blueGradient.png */,
 				9FAFB3341B87CB9800C6BA00 /* Info.plist */,
 				9FAFB3351B87CB9800C6BA00 /* main.m */,
 			);
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FAFB3421B87CB9800C6BA00 /* Main.storyboard in Resources */,
+				9FAFB36C1B883BE500C6BA00 /* blueGradient.png in Resources */,
 				9FAFB3471B87CB9900C6BA00 /* LaunchScreen.xib in Resources */,
 				9FAFB3441B87CB9900C6BA00 /* Images.xcassets in Resources */,
 			);

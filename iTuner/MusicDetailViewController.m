@@ -30,6 +30,11 @@
     _songTitleLabel.text = _passedSong;
     
     [self lyricRequest];
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = self.view.bounds;
+    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor whiteColor] CGColor], (id)[[UIColor blackColor] CGColor], nil];
+    [self.view.layer insertSublayer:gradient atIndex:0];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,7 +60,6 @@
     NSString *artistString = [_passedArtist stringByReplacingOccurrencesOfString:@" " withString:@"_"];
     NSString *songString = [_passedSong stringByReplacingOccurrencesOfString:@" " withString:@"_"];
     NSString *urlString = [NSString stringWithFormat:@"http://lyrics.wikia.com/wiki/%@:%@", artistString, songString];
-    NSLog(@"%@", urlString);
     NSURL *myURL = [NSURL URLWithString:urlString];
     [_lyricWebView loadRequest:[NSURLRequest requestWithURL:myURL]];
     

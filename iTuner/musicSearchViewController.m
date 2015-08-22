@@ -9,10 +9,12 @@
 
 #import "musicSearchViewController.h"
 #import "SongListTableViewController.h"
+#import "AppDelegate.h"
 
 @interface musicSearchViewController ()<UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UIButton *confirmSelectionButton;
+@property (strong, nonatomic) AppDelegate *appDelegate;
 @property (strong, nonatomic) NSMutableArray *searchType;
 @property (strong, nonatomic) NSArray *pickerData;
 @property (strong, nonatomic) NSString *typeString;
@@ -35,6 +37,7 @@
     self.searchTypePicker.dataSource = self;
     self.searchTypePicker.delegate = self;
     
+    // Round button corners!
     _confirmSelectionButton.layer.cornerRadius = 4;
     _confirmSelectionButton.layer.masksToBounds = YES;
     
@@ -46,6 +49,12 @@
     _searchTitleTextField.delegate = self;
     
     self.navigationItem.title = @"iTuner Music Search";
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = self.view.bounds;
+    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor whiteColor] CGColor], (id)[[UIColor blackColor] CGColor], nil];
+    [self.view.layer insertSublayer:gradient atIndex:0];
+    [_searchTypePicker setTintColor:[UIColor whiteColor]];
 
 }
 
@@ -90,6 +99,15 @@
             break;
 
     }
+}
+
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    NSString *title = _pickerData[row];
+    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
+    return attString;
+    
 }
 
 - (IBAction)searchButtonPressed:(id)sender
