@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>31938828-3673-4A53-8052-EAFD033FBD91</string>
+	<key>IDESourceControlProjectName</key>
+	<string>iTuner</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>34EF1937F1046163B9CF87D01B2F332D5582546C</key>
+		<string>https://github.com/iamthejonsmith/iTuner.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iTuner.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>34EF1937F1046163B9CF87D01B2F332D5582546C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/iamthejonsmith/iTuner.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>34EF1937F1046163B9CF87D01B2F332D5582546C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>34EF1937F1046163B9CF87D01B2F332D5582546C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iTuner</string>
+		</dict>
+	</array>
+</dict>
+</plist>

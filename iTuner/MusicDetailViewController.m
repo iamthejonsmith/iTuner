@@ -14,6 +14,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *albumImage;
 @property (strong, nonatomic) IBOutlet UILabel *artistLabel;
 @property (strong, nonatomic) IBOutlet UILabel *songTitleLabel;
+@property (strong, nonatomic) NSString *imageLgURL;
+@property (strong, nonatomic) UIImage *albumLgArt;
 
 @end
 
@@ -25,7 +27,11 @@
     _lyricWebView.delegate = self;
     
    self.navigationItem.title = @"iTuner Lyric Page";
-    _albumImage.image = _passedImage;
+    
+    _imageLgURL = _passedImage;
+    _albumLgArt = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: _imageLgURL]]];
+                                          
+    _albumImage.image = _albumLgArt;
     _artistLabel.text = _passedArtist;
     _songTitleLabel.text = _passedSong;
     
@@ -35,6 +41,7 @@
     gradient.frame = self.view.bounds;
     gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor whiteColor] CGColor], (id)[[UIColor blackColor] CGColor], nil];
     [self.view.layer insertSublayer:gradient atIndex:0];
+    
 }
 
 - (void)didReceiveMemoryWarning {

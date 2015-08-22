@@ -39,8 +39,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -64,14 +62,14 @@
     NSString *album = listingDict[@"collectionName"];
     NSString *song = listingDict[@"trackName"];
     NSString *albumURL = listingDict[@"artworkUrl30"];
-    NSString *albumLrgURL = listingDict[@"artworkUrl60"];
+//    NSString *albumLrgURL = listingDict[@"artworkUrl60"];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", artist, album];
     cell.detailTextLabel.text = song;
     UIImage *albumArt = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: albumURL]]];
     cell.imageView.image = albumArt;
     
-    _albumLgArt = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: albumLrgURL]]];
+//    _albumLgArt = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: albumLrgURL]]];
     
     return cell;
 }
@@ -138,7 +136,7 @@
         
         mdvc.passedArtist = musicDict[@"artistName"];
         mdvc.passedSong = musicDict[@"trackName"];
-        mdvc.passedImage = _albumLgArt;
+        mdvc.passedImage = musicDict[@"artworkUrl60"];
         
     }
     

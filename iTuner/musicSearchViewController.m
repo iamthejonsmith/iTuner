@@ -114,6 +114,7 @@
 {
     _titleString = _searchTitleTextField.text;
     [self performSegueWithIdentifier:@"toMusicList" sender:self];
+    [_searchTitleTextField resignFirstResponder];
 }
 
 #pragma mark - Hide keyboard/adjust view methods
