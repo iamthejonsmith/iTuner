@@ -10,11 +10,14 @@
 		9FAFB3361B87CB9800C6BA00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFB3351B87CB9800C6BA00 /* main.m */; };
 		9FAFB3391B87CB9800C6BA00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFB3381B87CB9800C6BA00 /* AppDelegate.m */; };
 		9FAFB33C1B87CB9800C6BA00 /* iTuner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFB33A1B87CB9800C6BA00 /* iTuner.xcdatamodeld */; };
-		9FAFB33F1B87CB9800C6BA00 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFB33E1B87CB9800C6BA00 /* ViewController.m */; };
 		9FAFB3421B87CB9800C6BA00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FAFB3401B87CB9800C6BA00 /* Main.storyboard */; };
 		9FAFB3441B87CB9900C6BA00 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FAFB3431B87CB9900C6BA00 /* Images.xcassets */; };
 		9FAFB3471B87CB9900C6BA00 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FAFB3451B87CB9900C6BA00 /* LaunchScreen.xib */; };
 		9FAFB3531B87CB9900C6BA00 /* iTunerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFB3521B87CB9900C6BA00 /* iTunerTests.m */; };
+		9FAFB35F1B87CDBF00C6BA00 /* SongListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFB35E1B87CDBF00C6BA00 /* SongListTableViewController.m */; };
+		9FAFB3631B87D01200C6BA00 /* MusicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFB3621B87D01200C6BA00 /* MusicDetailViewController.m */; };
+		9FAFB3661B87D68600C6BA00 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFB3651B87D68600C6BA00 /* MBProgressHUD.m */; };
+		9FAFB36A1B87D9B000C6BA00 /* musicSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFB3691B87D9B000C6BA00 /* musicSearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +37,20 @@
 		9FAFB3371B87CB9800C6BA00 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9FAFB3381B87CB9800C6BA00 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9FAFB33B1B87CB9800C6BA00 /* iTuner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iTuner.xcdatamodel; sourceTree = "<group>"; };
-		9FAFB33D1B87CB9800C6BA00 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9FAFB33E1B87CB9800C6BA00 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9FAFB3411B87CB9800C6BA00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FAFB3431B87CB9900C6BA00 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9FAFB3461B87CB9900C6BA00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9FAFB34C1B87CB9900C6BA00 /* iTunerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FAFB3511B87CB9900C6BA00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FAFB3521B87CB9900C6BA00 /* iTunerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTunerTests.m; sourceTree = "<group>"; };
+		9FAFB35D1B87CDBF00C6BA00 /* SongListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongListTableViewController.h; sourceTree = "<group>"; };
+		9FAFB35E1B87CDBF00C6BA00 /* SongListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongListTableViewController.m; sourceTree = "<group>"; };
+		9FAFB3611B87D01200C6BA00 /* MusicDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDetailViewController.h; sourceTree = "<group>"; };
+		9FAFB3621B87D01200C6BA00 /* MusicDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDetailViewController.m; sourceTree = "<group>"; };
+		9FAFB3641B87D68600C6BA00 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		9FAFB3651B87D68600C6BA00 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		9FAFB3681B87D9B000C6BA00 /* musicSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = musicSearchViewController.h; sourceTree = "<group>"; };
+		9FAFB3691B87D9B000C6BA00 /* musicSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = musicSearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +92,9 @@
 		9FAFB3321B87CB9800C6BA00 /* iTuner */ = {
 			isa = PBXGroup;
 			children = (
-				9FAFB3371B87CB9800C6BA00 /* AppDelegate.h */,
-				9FAFB3381B87CB9800C6BA00 /* AppDelegate.m */,
-				9FAFB33D1B87CB9800C6BA00 /* ViewController.h */,
-				9FAFB33E1B87CB9800C6BA00 /* ViewController.m */,
+				9FAFB35C1B87CBFA00C6BA00 /* Delegate Method */,
+				9FAFB3671B87D69C00C6BA00 /* Progress HUD */,
+				9FAFB3601B87CDC500C6BA00 /* View Controllers */,
 				9FAFB3401B87CB9800C6BA00 /* Main.storyboard */,
 				9FAFB3431B87CB9900C6BA00 /* Images.xcassets */,
 				9FAFB3451B87CB9900C6BA00 /* LaunchScreen.xib */,
@@ -120,6 +128,37 @@
 				9FAFB3511B87CB9900C6BA00 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9FAFB35C1B87CBFA00C6BA00 /* Delegate Method */ = {
+			isa = PBXGroup;
+			children = (
+				9FAFB3371B87CB9800C6BA00 /* AppDelegate.h */,
+				9FAFB3381B87CB9800C6BA00 /* AppDelegate.m */,
+			);
+			name = "Delegate Method";
+			sourceTree = "<group>";
+		};
+		9FAFB3601B87CDC500C6BA00 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9FAFB3681B87D9B000C6BA00 /* musicSearchViewController.h */,
+				9FAFB3691B87D9B000C6BA00 /* musicSearchViewController.m */,
+				9FAFB35D1B87CDBF00C6BA00 /* SongListTableViewController.h */,
+				9FAFB35E1B87CDBF00C6BA00 /* SongListTableViewController.m */,
+				9FAFB3611B87D01200C6BA00 /* MusicDetailViewController.h */,
+				9FAFB3621B87D01200C6BA00 /* MusicDetailViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		9FAFB3671B87D69C00C6BA00 /* Progress HUD */ = {
+			isa = PBXGroup;
+			children = (
+				9FAFB3641B87D68600C6BA00 /* MBProgressHUD.h */,
+				9FAFB3651B87D68600C6BA00 /* MBProgressHUD.m */,
+			);
+			name = "Progress HUD";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,9 +261,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FAFB3631B87D01200C6BA00 /* MusicDetailViewController.m in Sources */,
+				9FAFB36A1B87D9B000C6BA00 /* musicSearchViewController.m in Sources */,
+				9FAFB3661B87D68600C6BA00 /* MBProgressHUD.m in Sources */,
 				9FAFB33C1B87CB9800C6BA00 /* iTuner.xcdatamodeld in Sources */,
 				9FAFB3391B87CB9800C6BA00 /* AppDelegate.m in Sources */,
-				9FAFB33F1B87CB9800C6BA00 /* ViewController.m in Sources */,
+				9FAFB35F1B87CDBF00C6BA00 /* SongListTableViewController.m in Sources */,
 				9FAFB3361B87CB9800C6BA00 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
