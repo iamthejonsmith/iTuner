@@ -1,7 +1,7 @@
 # iTuner
 Final Commit
 
-This is a simple iTunes music search application for testing purposes.
+This is a simple iTunes music search application.
 
 User is presented with a initial view utilizing a pickerView for Type of Search to be completed
 User is presented with text field to enter search string
